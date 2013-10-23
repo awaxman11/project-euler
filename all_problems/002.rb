@@ -5,3 +5,14 @@
 # 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
+a = [1,2,3,5,8]
+b = 0
+while b < 4000000  
+  b = a[-1]+a[-2]
+  a << b if b < 4000000
+end
+sum = 0
+a.each do |num|
+  sum += num if num.even?
+end
+puts sum
